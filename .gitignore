@@ -3,3 +3,5 @@ node_modules/
 coverage/
 reports/
 public/reports/
+npm-debug.log
+

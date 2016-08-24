@@ -1,8 +1,8 @@
 // DesktopRouter.js
 // ----------------
-define(["jquery", "backbone", "models/Model", "views/View", "collections/Collection"],
+define(["jquery", "backbone", "models/ConjugationModel", "views/ConjugationView", "collections/Collection"],
 
-    function($, Backbone, Model, View, Collection) {
+    function($, Backbone, ConjugationModel, ConjugationView, Collection) {
 
         var DesktopRouter = Backbone.Router.extend({
 
@@ -24,7 +24,7 @@ define(["jquery", "backbone", "models/Model", "views/View", "collections/Collect
             index: function() {
 
                 // Instantiates a new view which will render the header text to the page
-                new View();
+                new ConjugationView({model: new ConjugationModel()});
 
             }
 

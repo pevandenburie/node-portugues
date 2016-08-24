@@ -21,6 +21,8 @@ require.config({
 
       "backbone": "../libs/backbone",
 
+      "jsportugues": "../libs/jsportugues",
+
       // Plugins
       // -------
       "backbone.validateAll": "../libs/plugins/Backbone.validateAll",
@@ -49,7 +51,9 @@ require.config({
       "backbone.validateAll": ["backbone"],
 
       // Jasmine-jQuery plugin
-      "jasminejquery": ["jquery"]
+      "jasminejquery": ["jquery"],
+
+      "jsportugues" : ["underscore"],
 
   }
 
