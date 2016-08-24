@@ -24,6 +24,8 @@ define(["jquery", "backbone", "jsportugues", "models/ConjugationModel", "text!te
             this.render();
           },
 
+          // The DOM Element associated with this view
+          el: "#content",
 
           template: _.template(
             "<strong>Conjugado</strong>"+

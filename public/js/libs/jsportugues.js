@@ -56,7 +56,8 @@
   	"elas" : 4
   }
 
-  var subjects = JsPortugues.subjects = _(subjectTerminaisonIndexes).keys();
+  //JsPortugues.subjects = _(subjectTerminaisonIndexes).keys();
+  JsPortugues.subjects = _.keys(subjectTerminaisonIndexes);
 
   return JsPortugues;
 
