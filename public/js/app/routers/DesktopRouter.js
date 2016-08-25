@@ -1,8 +1,8 @@
 // DesktopRouter.js
 // ----------------
-define(["jquery", "backbone", "models/ConjugationModel", "views/ConjugationView", "collections/Collection"],
+define(["jquery", "backbone", "models/ConjugationModel", "models/PreteritoModel", "views/ConjugationView", "views/ExoView"],
 
-    function($, Backbone, ConjugationModel, ConjugationView, Collection) {
+    function($, Backbone, ConjugationModel, PreteritoModel, ExoView, ConjugationView) {
 
         var DesktopRouter = Backbone.Router.extend({
 
@@ -17,15 +17,18 @@ define(["jquery", "backbone", "models/ConjugationModel", "views/ConjugationView"
             routes: {
 
                 // When there is no hash on the url, the home method is called
-                "": "index"
+                "": "index",
+                "/preterito": "preterito"
 
             },
 
             index: function() {
-
                 // Instantiates a new view which will render the header text to the page
                 new ConjugationView({model: new ConjugationModel()});
+            },
 
+            preterito: function() {
+              new ExoView({model: new PreteritoModel()});
             }
 
         });
