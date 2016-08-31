@@ -2,7 +2,7 @@
 // ----------------
 define(["jquery", "backbone", "models/ConjugationModel", "models/PreteritoModel", "views/ConjugationView", "views/ExoView"],
 
-    function($, Backbone, ConjugationModel, PreteritoModel, ExoView, ConjugationView) {
+    function($, Backbone, ConjugationModel, PreteritoModel, ConjugationView, ExoView) {
 
         var DesktopRouter = Backbone.Router.extend({
 
