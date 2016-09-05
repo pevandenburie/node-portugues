@@ -6,6 +6,7 @@ define(["jquery", "backbone", "jsportugues", "models/ExoModel", "collections/Ans
   function($, Backbone, JsPortugues, ExoModel, AnswerLogList, AnswerLogListView, template){
 
     var ExoView = Backbone.View.extend({
+
       events: {
         "click #submit": "submitAnswer",
         "keypress": "onKeyPress",
@@ -22,6 +23,9 @@ define(["jquery", "backbone", "jsportugues", "models/ExoModel", "collections/Ans
         this.logListView = new AnswerLogListView({collection: this.model.logList});
       },
 
+      // The DOM Element associated with this view
+      el: "#content",
+      
       template: _.template(
         '<strong><%=title%></strong>'+
         '<br><br>'+

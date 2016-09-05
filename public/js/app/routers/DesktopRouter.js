@@ -18,7 +18,7 @@ define(["jquery", "backbone", "models/ConjugationModel", "models/PreteritoModel"
 
                 // When there is no hash on the url, the home method is called
                 "": "index",
-                "/preterito": "preterito"
+                "preterito": "preterito"
 
             },
 
@@ -28,7 +28,8 @@ define(["jquery", "backbone", "models/ConjugationModel", "models/PreteritoModel"
             },
 
             preterito: function() {
-              new ExoView({model: new PreteritoModel()});
+                var view = new ExoView({model: PreteritoModel});
+                view.render();
             }
 
         });

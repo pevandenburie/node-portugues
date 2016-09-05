@@ -60,7 +60,7 @@
   	"elas" : 4
   }
 
-  //JsPortugues.subjects = _(subjectTerminaisonIndexes).keys();
+
   JsPortugues.subjects = _.keys(subjectTerminaisonIndexes);
 
 
@@ -374,7 +374,7 @@
   }
 
   function generateRandomSubject() {
-    var subjects = _(subjectTerminaisonIndexes).keys();
+    var subjects = _.keys(subjectTerminaisonIndexes);
     var idx = getRandomInt(0, _.size(subjects)-1 );
     return subjects[idx];
   }
@@ -411,7 +411,7 @@
     "falar"
     ];
 
-  var verbs = _.union(_(preteritoIrregulares).keys(), verbList);
+  var verbs = _.union(_.keys(preteritoIrregulares), verbList);
 
   // Init of the question
   JsPortugues.exercises.preterito = {
