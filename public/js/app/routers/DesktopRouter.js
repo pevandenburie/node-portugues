@@ -1,8 +1,8 @@
 // DesktopRouter.js
 // ----------------
-define(["jquery", "backbone", "models/ConjugationModel", "models/PreteritoModel", "views/ConjugationView", "views/ExoView"],
+define(["jquery", "backbone", "models/ConjugationModel", "models/PreteritoModel", "models/ImperfeitodoconjunctivoModel", "models/PresentedoconjunctivoModel", "views/ConjugationView", "views/ExoView"],
 
-    function($, Backbone, ConjugationModel, PreteritoModel, ConjugationView, ExoView) {
+    function($, Backbone, ConjugationModel, PreteritoModel, ImperfeitodoconjunctivoModel, PresentedoconjunctivoModel, ConjugationView, ExoView) {
 
         var DesktopRouter = Backbone.Router.extend({
 
@@ -18,7 +18,9 @@ define(["jquery", "backbone", "models/ConjugationModel", "models/PreteritoModel"
 
                 // When there is no hash on the url, the home method is called
                 "": "index",
-                "preterito": "preterito"
+                "preterito": "preterito",
+                "presentedoconjunctivo": "presentedoconjunctivo",
+                "imperfeitodoconjunctivo": "imperfeitodoconjunctivo",
 
             },
 
@@ -30,13 +32,22 @@ define(["jquery", "backbone", "models/ConjugationModel", "models/PreteritoModel"
             preterito: function() {
                 var view = new ExoView({model: PreteritoModel});
                 view.render();
-            }
+            },
+
+            presentedoconjunctivo: function() {
+                var view = new ExoView({model: PresentedoconjunctivoModel});
+                view.render();
+            },
+
+            imperfeitodoconjunctivo: function() {
+                var view = new ExoView({model: ImperfeitodoconjunctivoModel});
+                view.render();
+            },
 
         });
 
         // Returns the DesktopRouter class
         return DesktopRouter;
-
     }
 
 );

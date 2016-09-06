@@ -411,16 +411,43 @@
     "falar"
     ];
 
-  var verbs = _.union(_.keys(preteritoIrregulares), verbList);
+  var exo_preterito_verbs = _.union(_.keys(preteritoIrregulares), verbList);
 
   // Init of the question
   JsPortugues.exercises.preterito = {
     createQuestion: function() {
-      return new RandomQuestion(verbs, JsPortugues.nopreterito);
+      return new RandomQuestion(exo_preterito_verbs, JsPortugues.nopreterito);
     }
   };
 
 
+
+  //
+  // Portugues Imperfeito do Conjunctivo exercise
+  //
+
+  var exo_impdoconj_verbs = _.union(_.keys(imperfeitodoconjunctivoIrregulares), verbList);
+
+  // Init of the question
+  JsPortugues.exercises.imperfeitodoconjunctivo = {
+    createQuestion: function() {
+      return new RandomQuestion(exo_impdoconj_verbs, JsPortugues.noimperfeitodoconjunctivo);
+    }
+  };
+
+
+  //
+  // Portugues Presente do Conjunctivo exercise
+  //
+
+  var exo_presdoconj_verbs = _.union(_.keys(presentedoconjunctivoAlteredRadical), _.keys(presentedoconjunctivoIrregulares), verbList);
+
+  // Init of the question
+  JsPortugues.exercises.presentedoconjunctivo = {
+    createQuestion: function() {
+      return new RandomQuestion(exo_presdoconj_verbs, JsPortugues.nopresentedoconjunctivo);
+    }
+  };
 
 
   return JsPortugues;

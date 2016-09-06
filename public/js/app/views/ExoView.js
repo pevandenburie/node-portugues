@@ -25,8 +25,20 @@ define(["jquery", "backbone", "jsportugues", "models/ExoModel", "collections/Ans
 
       // The DOM Element associated with this view
       el: "#content",
-      
+
       template: _.template(
+        '<div class="dropdown">'+
+            '<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Menu </button>'+
+            '<ul class="dropdown-menu">'+
+                '<li><a href="/" data-backbone="true">Conjuguing</a></li>'+
+                '<li class="divider"></li>'+
+                '<li><a href="/preterito" data-backbone="true">Exo Preterito do Indicativo</a></li>'+
+                '<li><a href="/presentedoconjunctivo" data-backbone="true">Exo Presente do Conjunctivo</a></li>'+
+                '<li><a href="/imperfeitodoconjunctivo" data-backbone="true">Exo Imperfeito do Conjunctivo</a></li>'+
+            '</ul>'+
+        '</div>'+
+        '<br><br>'+
+        
         '<strong><%=title%></strong>'+
         '<br><br>'+
         '<div id=score><%="Score:  " + score.nbSuccess + " / " + (score.nbSuccess + score.nbFailure)%></div>'+
